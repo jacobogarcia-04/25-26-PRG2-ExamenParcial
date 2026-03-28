@@ -48,7 +48,8 @@ public class Actividades {
             console.writeln("¡Éxito! Socio inscrito en " + this.actividad);
             console.writeln("Estado actual -> Inscritos: " + this.inscritos + " | Aforo máximo: " + this.aforo);
         } else {
-            console.writeln("ERROR: No se pudo agregar. La actividad " + this.actividad + " está llena."+ "Numero inscritos"+this.inscritos);
+            console.writeln("ERROR: No se pudo agregar. La actividad " + this.actividad + " está llena."
+                    + "Numero inscritos" + this.inscritos);
         }
     }
 }
