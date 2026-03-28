@@ -15,7 +15,6 @@ public class Socios {
     }
 
     private boolean estadoActivo() {
-
         boolean alta = this.estadoInscripcion.equals("Alta");
         return alta;
     }
