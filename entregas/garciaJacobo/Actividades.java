@@ -1,14 +1,25 @@
 package entregas.garciaJacobo;
 
 public class Actividades {
+
     private String actividad;
     private String monitor;
     private int aforo;
+    private int inscritos;
 
     public Actividades(String actividad, String monitor, int aforo) {
         this.actividad = actividad;
         this.monitor = monitor;
         this.aforo = aforo;
+        this.inscritos = 0;
+    }
+
+    private boolean estaLlena() {
+        return this.inscritos >= this.aforo;
+    }
+
+    private int plazasLibres() {
+        return this.aforo - this.inscritos;
     }
 
     public String nombrarActividad() {
@@ -21,17 +32,23 @@ public class Actividades {
 
     public void mostrarAforo() {
         Console console = new Console();
-        console.writeln("Aforo de " + this.actividad + ": " + this.aforo);
+        console.writeln("Actividad: " + this.actividad + " | Aforo total: " + this.aforo + " | Plazas libres: "
+                + this.plazasLibres());
     }
 
     public void mostrar() {
         Console console = new Console();
-        console.writeln(this.actividad + " imparte " + this.monitor);
+        console.writeln(this.actividad + " impartida por " + this.monitor);
     }
 
     public void agregarActividad() {
         Console console = new Console();
-        console.writeln("Procesando inscripción en " + this.actividad);
-        console.writeln("Resultado: El socio ha sido vinculado a " + this.actividad + " (Aforo: " + this.aforo + ")");
+        if (!this.estaLlena()) {
+            this.inscritos++;
+            console.writeln("¡Éxito! Socio inscrito en " + this.actividad);
+            console.writeln("Estado actual -> Inscritos: " + this.inscritos + " | Aforo máximo: " + this.aforo);
+        } else {
+            console.writeln("ERROR: No se pudo agregar. La actividad " + this.actividad + " está llena."+ "Numero inscritos"+this.inscritos);
+        }
     }
 }
