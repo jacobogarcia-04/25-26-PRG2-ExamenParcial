@@ -9,6 +9,10 @@ public class Reservas {
         this.nombre = nombre;
         this.actividad = actividad;
         this.fecha = fecha;
+        if (this.esValida()) {
+            Console console = new Console();
+            console.writeln("SISTEMA: Reserva validada internamente con éxito.");
+        }
     }
 
     private boolean esValida() {
