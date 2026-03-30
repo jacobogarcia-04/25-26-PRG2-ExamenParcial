@@ -10,4 +10,12 @@ public class Reservas {
         this.actividad = actividad;
         this.fecha = fecha;
     }
+
+    private boolean esValida() {
+        boolean tieneNombre = !this.nombre.equals("");
+        boolean tieneActividad = !this.actividad.equals("");
+        boolean tieneFecha = !this.fecha.equals("");
+
+        return tieneNombre && tieneActividad && tieneFecha;
+    }
 }
