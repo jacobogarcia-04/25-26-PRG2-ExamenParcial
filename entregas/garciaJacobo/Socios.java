@@ -15,8 +15,7 @@ public class Socios {
     }
 
     private boolean estadoActivo() {
-        boolean alta = this.estadoInscripcion.equals("Alta");
-        return alta;
+       return this.estadoInscripcion.equalsIgnoreCase("ALTA");
     }
 
     public String preguntarNombreSocios() {
