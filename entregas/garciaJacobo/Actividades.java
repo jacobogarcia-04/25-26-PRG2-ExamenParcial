@@ -33,8 +33,7 @@ public class Actividades {
 
     public void mostrarAforo() {
         Console console = new Console();
-        console.writeln("Actividad: " + this.actividad + " | Aforo total: " + this.aforo + " | Plazas libres: "
-                + this.calcularPlazasLibres());
+       console.writeln("  [Aforo: " + this.aforo + " | Libres: " + this.calcularPlazasLibres() + "]");
     }
 
     public void mostrar() {
