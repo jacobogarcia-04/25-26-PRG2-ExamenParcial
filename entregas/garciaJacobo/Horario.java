@@ -25,7 +25,7 @@ public class Horario {
     }
 
     public String preguntarHoraFinal() {
-        return "La actividad termina a las: " + this.horaFin;
+        return " y termina a las: " + this.horaFin;
     }
 
     public void agregarHorario() {
