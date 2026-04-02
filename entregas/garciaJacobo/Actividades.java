@@ -18,12 +18,13 @@ public class Actividades {
         return this.inscritos >= this.aforo;
     }
 
-    private int plazasLibres() {
+    private int calcularPlazasLibres() {
         return this.aforo - this.inscritos;
     }
 
     public String nombrarActividad() {
-        return this.actividad;
+        return this.actividad
+                + (this.estaLlena() ? " (AFORO COMPLETO)" : " (Libres: " + this.calcularPlazasLibres() + ")");
     }
 
     public String nombrarMonitor() {
@@ -33,7 +34,7 @@ public class Actividades {
     public void mostrarAforo() {
         Console console = new Console();
         console.writeln("Actividad: " + this.actividad + " | Aforo total: " + this.aforo + " | Plazas libres: "
-                + this.plazasLibres());
+                + this.calcularPlazasLibres());
     }
 
     public void mostrar() {
@@ -49,7 +50,7 @@ public class Actividades {
             console.writeln("Estado actual -> Inscritos: " + this.inscritos + " | Aforo máximo: " + this.aforo);
         } else {
             console.writeln("ERROR: No se pudo agregar. La actividad " + this.actividad + " está llena."
-                    + "Numero inscritos" + this.inscritos);
+                    + " -Numero inscritos:" + this.inscritos);
         }
     }
 }
