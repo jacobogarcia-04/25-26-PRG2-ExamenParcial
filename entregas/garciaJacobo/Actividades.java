@@ -33,23 +33,26 @@ public class Actividades {
 
     public void mostrarAforo() {
         Console console = new Console();
-       console.writeln("  [Aforo: " + this.aforo + " | Libres: " + this.calcularPlazasLibres() + "]");
+        console.writeln("  [Aforo: " + this.aforo + " | Libres: " + this.calcularPlazasLibres() + "]");
     }
 
     public void mostrar() {
         Console console = new Console();
-        console.writeln(this.actividad + " impartida por " + this.monitor);
+        console.write(!this.estaLlena()
+                ? this.actividad + " impartida por " + this.monitor
+                : "");
     }
 
     public void agregarActividad() {
         Console console = new Console();
         if (!this.estaLlena()) {
-            this.inscritos++;
-            console.writeln("¡Éxito! Socio inscrito en " + this.actividad);
-            console.writeln("Estado actual -> Inscritos: " + this.inscritos + " | Aforo máximo: " + this.aforo);
-        } else {
-            console.writeln("ERROR: No se pudo agregar. La actividad " + this.actividad + " está llena."
-                    + " -Numero inscritos:" + this.inscritos);
+          this.inscritos++;
+        console.writeln("  >> ¡Éxito! Socio inscrito en " + this.actividad);
+        console.writeln("  >> Estado actual -> Inscritos: " + this.inscritos + " | Aforo máximo: " + this.aforo);
+    } else {
+        console.writeln(""); 
+        console.writeln("   No se pudo agregar. La actividad " + this.actividad + " está llena.");
+        console.writeln("  [!] Capacidad máxima: " + this.aforo);
         }
     }
 }
