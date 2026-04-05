@@ -31,18 +31,18 @@ public class Cliente {
         console.writeln("");
 
         console.writeln("Reservas:");
-        Reservas res1 = new Reservas(socio1.preguntarNombreSocios(), "Yoga", "01/04/2025");
+        Reservas res1 = new Reservas(socio1.preguntarNombreSocios(), yoga.nombrarActividad(), "01/02/2026");
         yoga.agregarActividad();
         console.write("  ->Socio: " + socio1.preguntarNombreSocios());
         yoga.mostrar();
         yoga.mostrarAforo();
-        console.writeln("Fecha de la reserva: " + socio1.preguntarFechaInscripcion());
+        console.writeln("Fecha de la reserva: " + "1/02/2026");
 
         console.writeln("");
         console.writeln("----------------------------------------------------");
         console.writeln("");
 
-        Reservas res2 = new Reservas(socio2.preguntarNombreSocios(), "Yoga", "01/04/2025");
+        Reservas res2 = new Reservas(socio2.preguntarNombreSocios(), yoga.nombrarActividad(), "01/02/2026");
 
         console.write(" ->Socio " + socio2.preguntarNombreSocios() + " ");
         yoga.agregarActividad();
